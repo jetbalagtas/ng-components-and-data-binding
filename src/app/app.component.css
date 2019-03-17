@@ -5,3 +5,7 @@
 p {
   color: blue;
 }
+
+.col-xs-12 button {
+  margin-right: 4px;
+}
