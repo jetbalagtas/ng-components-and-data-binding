@@ -10,7 +10,7 @@ export class CockpitComponent implements OnInit {
   @Output('svCreated') serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();
 // tslint:disable-next-line: no-output-rename
   @Output('bpCreated') blueprintCreated = new EventEmitter<{serverName: string, serverContent: string}>();
-  newServerName = '';
+  // newServerName = '';
   newServerContent = '';
 
   constructor() { }
@@ -18,17 +18,29 @@ export class CockpitComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddServer() {
+  // onAddServer() {
+  //   this.serverCreated.emit({
+  //     serverName: this.newServerName,
+  //     serverContent: this.newServerContent
+  //   });
+  // }
+  onAddServer(nameInput: HTMLInputElement) {
     this.serverCreated.emit({
-      serverName: this.newServerName,
+      serverName: nameInput.value,
       serverContent: this.newServerContent
     });
   }
 
-  onAddBlueprint() {
+  onAddBlueprint(nameInput: HTMLInputElement) {
     this.blueprintCreated.emit({
-      serverName: this.newServerName,
+      serverName: nameInput.value,
       serverContent: this.newServerContent
     });
   }
+  // onAddBlueprint() {
+  //   this.blueprintCreated.emit({
+  //     serverName: this.newServerName,
+  //     serverContent: this.newServerContent
+  //   });
+  // }
 }
